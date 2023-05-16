@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /agradecimiento/servicio-alquiler/
+Disallow: /comparar/computadores
+Disallow: /comparar/portatiles
+Disallow: /comparar/servidores
+
+Sitemap: https://compurent.com.co/sitemap.xml

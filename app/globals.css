@@ -1,0 +1,372 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home__topSectionBg {
+  background-image: url('/bgTopWave.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home__bgFooter {
+  background-image: url('/assets/bg/bgFooter.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 6em;
+  background-position: -400px 0;
+  height: 243px;
+}
+
+.home__abImage {
+  display: none;
+  position: absolute;
+  right: -300px;
+}
+
+.home__abImage > img {
+  max-width: 760px;
+}
+
+.compare__bgWave {
+  background-image: url('/bgTopWave.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 200px;
+}
+
+.renting__bgBanner {
+  background-image: url('/bgBannerMobile.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 90vh;
+  background-position: 0 -110px;
+  padding: 4rem 0;
+}
+
+.renting__bottomWaveBg {
+  background-image: none;
+}
+
+.cloud__banner {
+  background-image: url('/bgSnBanner.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -999;
+}
+
+.somos__sectionBg {
+  background-image: url('/bgQsBanner.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  padding: 10rem 0;
+}
+
+.textAnimation {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 40px;
+  width: fit-content;
+}
+
+.textAnimationCloud {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 40px;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.textAnimationCloud span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00E9B8;
+  animation: spin_words 6s infinite;
+}
+
+.textAnimation span {
+  color: #FE6D5C;
+  animation: spin_words 6s infinite;
+}
+
+.bgParallax {
+  background-color: #3D408F;
+  background-image: url('/bgParallax.svg');
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 500px;
+  margin-top: 8rem;
+  padding: 4rem 0;
+}
+
+.errorBgPage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/bgErrorPage.webp');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.imageContainer > image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.imageContainer > div {
+  position: unset !important;
+}
+
+@keyframes spin_words {
+  0% {
+      transform: translateY(0%);
+  }
+  20% {
+      transform: translateY(-112%);
+  }
+  40% {
+      transform: translateY(-100%);
+  }
+  60% {
+      transform: translateY(-212%);
+  }
+  80% {
+      transform: translateY(-200%);
+  }
+  100% {
+      transform: translateY(0%);
+  }
+}
+
+.spinner {
+border: 6px solid #f3f3f3;
+border-top: 6px solid #FE6D5C;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@layer components {
+  .cs-container {
+    @apply px-6 pt-6 md:px-24 mx-auto max-w-screen-2xl;
+  }
+
+  .cs-bannerTitle {
+    @apply text-4xl 2xl:text-5xl
+  }
+
+  .cs-sectionTitle {
+    @apply text-4xl 2xl:text-5xl text-purple font-semibold text-center py-10
+  }
+
+  .cs-text {
+    @apply 2xl:text-xl text-gray font-light
+  }
+
+  .cs-text-orange {
+    @apply md:text-xl text-[#FF887A] font-semibold
+  }
+
+  .cs-active-navbar {
+    @apply text-purple font-semibold text-base border-b-2 border-orange hover:scale-110 duration-200
+  }
+
+  .cs-inactive-navbar {
+    @apply text-gray font-normal hover:scale-110 duration-200
+  }
+
+  .btn-orange {
+    @apply bg-orange px-6 py-2 text-xl text-white mt-6
+  }
+
+  .active-tab {
+    @apply bg-purple cursor-pointer flex flex-col items-center justify-between px-4 py-8 rounded-xl
+  }
+
+  .inactive-tab {
+    @apply bg-zinc-200 cursor-pointer flex flex-col items-center justify-between px-4 py-8 rounded-xl
+  }
+
+  .landing-active-tab {
+    @apply bg-purple cursor-pointer flex flex-col items-center justify-between px-4  rounded-2xl
+  }
+
+  .landing-inactive-tab {
+    @apply bg-white cursor-pointer flex flex-col items-center justify-between px-4  rounded-2xl
+  }
+  
+  .active-tab-col {
+    @apply inset-1/2
+  }
+
+  .inactive-tab-col {
+    @apply hidden
+  }
+
+  .active-tab-text {
+    @apply text-white hidden lg:block text-center mt-4
+  }
+
+  .inactive-tab-text {
+    @apply text-purple hidden lg:block text-center mt-4
+  }
+
+  .active-category {
+    @apply text-purple font-semibold cursor-pointer border-b-2 border-orange
+  }
+
+  .inactive-category {
+    @apply text-gray font-extralight cursor-pointer
+  }
+
+  .active-box-item {
+    @apply transition-colors bg-slate-800 text-white w-[35px] h-[35px] p-2 border rounded-md border-slate-300 flex items-center justify-center cursor-pointer
+  }
+
+  .inactive-box-item {
+    @apply transition-colors hover:border-slate-800 w-[35px] h-[35px] p-2 border rounded-md border-slate-300 flex items-center justify-center cursor-pointer
+  }
+
+  .cs-Landingcontainer {
+    @apply   md:px-24 mx-auto max-w-screen-xl;
+  }
+  .foot-link{
+    @apply text-white text-xl py-2 font-light cursor-pointer hover:scale-110 duration-200
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system Roboto, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FE6D5C; 
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-links{
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+select,
+select option {
+  color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+  color: rgb(156, 163, 175);
+}
+
+
+@media only screen and (min-width: 768px){
+  .renting__bgBanner {
+      padding: 4rem 0;
+      background-size: cover;
+      background-position: 0 -350px;
+  }
+
+}
+
+@media only screen and (min-width: 1024px){
+  .renting__bgBanner {
+      padding: 0;
+  }
+  
+  .renting__bottomWaveBg {
+      background-image: url('/bgBottomWave.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 90vh;
+  }
+
+  .renting__bgBanner {
+      background-image: none;
+  }
+}
+
+@media only screen and (min-width: 1280px){
+  .home__abImage {
+      display: block;
+  }
+
+  .home__bgFooter {
+      background-position: 0 0 ;
+  }
+}
+
+@media only screen and (min-width: 1439px){
+  .home__topSectionBg {
+      min-height: 30vh;
+  }
+}
+
+@media only screen and (min-width: 1536px){
+
+  .home__bottomsectionBg {
+      background-position: 0% -100px;
+  }
+
+  .home__abImage > img {
+      max-width: 760px;
+  }
+}
+
+@media only screen and (min-width: 1920px){
+  .home__abImage {
+      right: -350px;
+  }
+
+  .home__abImage > img {
+      max-width: 840px;
+  }
+}
